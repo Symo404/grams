@@ -1,0 +1,72 @@
+{
+  "posts": [
+    {
+      "id": "our-theory",
+      "title": "Our theory",
+      "tagline": "Where philosophy meets the pour.",
+      "category": "Craft & Comfort",
+      "image": "/images/blog/theory.png",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "At the heart of our brand is a simple yet profound theory: coffee is more than just a beverage; it's a medium for connection, creativity, and comfort. We believe that the perfect cup is achieved at the intersection of meticulous science and intuitive art. It starts with sourcing single-origin beans from ethical farms, understanding the unique terroir of each batch, and respecting the journey from seed to cup."
+        },
+        {
+          "type": "subheading",
+          "text": "The Science of the Bean"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our philosophy dictates a deep dive into the science of extraction. We obsess over water temperature, grind size, and brew time, using precise methods to ensure every cup extracts the most desirable flavors. This technical mastery is our foundation, allowing the true character of the coffee to shine without bitterness or imbalance. It's a calculated approach to crafting a consistently excellent experience."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Art of the Moment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Beyond the numbers, there is the art. It's the barista's steady hand during a manual pour-over, the intuitive adjustment for a humid day, and the welcoming smile that accompanies your drink. This is where philosophy meets the pour—in the human element that transforms a well-made coffee into a memorable moment of comfort and warmth."
+        }
+      ]
+    },
+    {
+      "id": "our-space",
+      "title": "Our space",
+      "tagline": "A quiet architecture of focus and warmth.",
+      "category": "Craft & Comfort",
+      "image": "/images/blog/space.png",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "We designed our space to be an extension of our coffee philosophy: clean, intentional, and comfortable. It's a sanctuary from the noise of the outside world, a place where you can find focus, catch up with a friend, or simply enjoy a quiet moment to yourself. The architecture is minimalist, utilizing natural materials like wood and stone to create an atmosphere of calm and warmth."
+        }
+      ]
+    },
+    {
+      "id": "art-behind-pour",
+      "title": "The Art Behind Every Pour",
+      "tagline": "Our Manual Brewing Rituals",
+      "category": "Brewed Differently",
+      "image": "/images/blog/art-of-pour.png",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Manual brewing is where our passion for craft truly comes alive. Unlike automated machines, a hand pour is a delicate dance between barista and bean. It's a ritual that honors the coffee, allowing us to highlight the subtle, nuanced flavors that make each origin unique. Our baristas are trained not just in technique, but in sensory awareness, learning to read the coffee and adjust their pour to bring out its best qualities."
+        }
+      ]
+    },
+    {
+      "id": "not-just-coffee",
+      "title": "Not Just Coffee",
+      "tagline": "Designing Moments Through Method",
+      "category": "Brewed Differently",
+      "image": "/images/blog/not-just-coffee.png",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "While coffee is our core, our mission is broader: to design moments. This methodical approach extends to everything we do, from the ergonomics of our counter to the selection of our ceramics and the curation of our non-coffee offerings. Every element is chosen to contribute to a cohesive and comforting experience, ensuring that whether you're here for an espresso or a hibiscus cooler, the moment is crafted with the same intention and care."
+        }
+      ]
+    }
+  ]
+}

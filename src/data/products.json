@@ -1,0 +1,489 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Half brown-cream ceramic",
+            "price": "54.00",
+            "stock": 10,
+            "image": "/images/products/halfbrown-cup.png",
+            "category": "Best Sellers",
+            "tags": ["handmade", "best-seller"],
+            "createdAt": "2025-08-10T10:00:00Z",
+            "details": [
+              "Capacity: ~250ml / 8.5oz",
+              "Height: ~9 cm",
+              "Diameter: ~8 cm",
+              "Material: High-quality ceramic",
+              "Finish: Matte exterior, glossy interior",
+              "Color: Charcoal black with engraved logo"
+            ],
+            "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+            "galleryImages": [
+              "/images/products/halfbrown-cup.png",
+              "/images/products/gallery/halfbrown-cup.png",
+              "/images/products/halfbrown-cup.png",
+              "/images/products/gallery/halfbrown-cup.png"
+            ],
+            "colors": [
+                { "name": "Charcoal Black", "hex": "#A24D31" },
+                { "name": "Cream", "hex": "#F0DCBC" }
+                
+              ],
+              "moreDetails": [
+                {
+                  "image": "/images/products/details/halfbrown-cup-2.png",
+                  "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                },
+                {
+                  "image": "/images/products/details/halfbrown-cup-3.png",
+                  "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+                },
+                {
+                  "image": "/images/products/details/halfbrown-cup-4.png",
+                  "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+                }
+              ]
+          },
+          {
+            "id": 2,
+            "name": "Scout Indonesia Espresso",
+            "price": "250.00",
+            "stock": 10,
+            "image": "/images/products/green-coffee.png",
+            "category": "Best Sellers",
+            "tags": ["handmade", "best-seller"],
+            "createdAt": "2025-08-10T10:00:00Z",
+            "details": [
+              "Capacity: ~250ml / 8.5oz",
+              "Height: ~9 cm",
+              "Diameter: ~8 cm",
+              "Material: High-quality ceramic",
+              "Finish: Matte exterior, glossy interior",
+              "Color: Charcoal black with engraved logo"
+            ],
+            "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+            "galleryImages": [
+              "/images/products/green-coffee.png",
+              "/images/products/gallery/halfbrown-cup.png",
+              "/images/products/halfbrown-cup.png",
+              "/images/products/gallery/halfbrown-cup.png"
+            ],
+           
+              "moreDetails": [
+                {
+                  "image": "/images/products/details/halfbrown-cup-2.png",
+                  "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                },
+                {
+                  "image": "/images/products/details/halfbrown-cup-3.png",
+                  "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+                },
+                {
+                  "image": "/images/products/details/halfbrown-cup-4.png",
+                  "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+                }
+              ]
+          },
+      {
+        "id": 3,
+        "name": "Cream color ceramic cup",
+        "price": "43.00",
+        "image": "/images/products/cream-cup.png",
+        "category": "Best Sellers"
+      },
+      {
+        "id": 4,
+        "name": "French Press",
+        "price": "84.00",
+        "image": "/images/products/french-press.png",
+        "category": "Best Sellers"
+      },
+      {
+        "id": 6,
+        "name": "Sky blue ceramic cup",
+        "price": "50.00",
+        "stock": 15,
+        "image": "/images/products/skyblue-cup.png",
+        "category": "Best Sellers",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/halfbrown-cup.png",
+          "/images/products/gallery/halfbrown-cup.png",
+          "/images/products/halfbrown-cup.png",
+          "/images/products/gallery/halfbrown-cup.png"
+        ],
+        "colors": [
+            { "name": "Charcoal Black", "hex": "#A24D31" },
+            { "name": "Cream", "hex": "#F0DCBC" }
+            
+          ],
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 7,
+        "name": "Sky blue ceramic cup",
+        "price": "50.00",
+        "stock": 15,
+        "image": "/images/products/skyblue-cup.png",
+        "category": "Grams Pots",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/halfbrown-cup.png",
+          "/images/products/gallery/halfbrown-cup.png",
+          "/images/products/halfbrown-cup.png",
+          "/images/products/gallery/halfbrown-cup.png"
+        ],
+        "colors": [
+            { "name": "Charcoal Black", "hex": "#A24D31" },
+            { "name": "Cream", "hex": "#F0DCBC" }
+            
+          ],
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 9,
+        "name": "Black ceramic cup",
+        "price": "50.00",
+        "stock": 15,
+        "image": "/images/products/black-cup.png",
+        "category": "Grams Pots",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/black-cup",
+          "/images/products/black-cup",
+          "/images/products/black-cup",
+          "/images/products/black-cup"
+        ],
+        "colors": [
+            { "name": "Charcoal Black", "hex": "#A24D31" },
+            { "name": "Cream", "hex": "#F0DCBC" }
+            
+          ],
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 10,
+        "name": "White ceramic cup",
+        "price": "50.00",
+        "stock": 15,
+        "image": "/images/products/white-cup.png",
+        "category": "Grams Pots",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal white with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/white-cup",
+          "/images/products/white-cup",
+          "/images/products/white-cup",
+          "/images/products/white-cup"
+        ],
+        "colors": [
+            { "name": "Charcoal Black", "hex": "#A24D31" },
+            { "name": "Cream", "hex": "#F0DCBC" }
+            
+          ],
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 8,
+        "name": "Grey ceramic cup",
+        "price": "50.00",
+        "stock": 15,
+        "image": "/images/products/grey-cup.png",
+        "category": "Grams Pots",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal grey with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/grey-cup",
+          "/images/products/grey-cup",
+          "/images/products/grey-cup",
+          "/images/products/grey-cup"
+        ],
+        "colors": [
+            { "name": "Charcoal Black", "hex": "#A24D31" },
+            { "name": "Cream", "hex": "#F0DCBC" }
+            
+          ],
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 9,
+        "name": "sky blue ceramic cup",
+        "price": "36.00",
+        "image": "/images/products/pot-blue-4.png",
+        "category": "Grams Pots"
+      },
+      {
+        "id": 2,
+        "name": "Scout Indonesia Espresso",
+        "price": "250.00",
+        "stock": 10,
+        "image": "/images/products/green-coffee.png",
+        "category": "Grams Coffee",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/green-coffee.png",
+          "/images/products/gallery/halfbrown-cup.png",
+          "/images/products/halfbrown-cup.png",
+          "/images/products/gallery/halfbrown-cup.png"
+        ],
+       
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 11,
+        "name": "Zeno Kenya Filtre",
+        "price": "230.00",
+        "stock": 10,
+        "image": "/images/products/blue-coffee.png",
+        "category": "Grams Coffee",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/blue-coffee.png",
+          "/images/products/blue-coffee.png",
+          "/images/products/blue-coffee.png",
+          "/images/products/blue-coffee.png"
+        ],
+       
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 12,
+        "name": "Underdog Mogiana Esspresso",
+        "price": "265.00",
+        "stock": 10,
+        "image": "/images/products/white-coffee.png",
+        "category": "Grams Coffee",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png"
+        ],
+       
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      },
+      {
+        "id": 20,
+        "name": "French Press",
+        "price": "265.00",
+        "stock": 10,
+        "image": "/images/products/french-press.png",
+        "category": "Grams Tools",
+        "tags": ["handmade", "best-seller"],
+        "createdAt": "2025-08-10T10:00:00Z",
+        "details": [
+          "Capacity: ~250ml / 8.5oz",
+          "Height: ~9 cm",
+          "Diameter: ~8 cm",
+          "Material: High-quality ceramic",
+          "Finish: Matte exterior, glossy interior",
+          "Color: Charcoal black with engraved logo"
+        ],
+        "shippingNote": "Orders are processed within 2-3 business days. Standard delivery takes 3-7 business days. Express options are available. You'll receive tracking info once shipped. We are not responsible for delays due to incorrect addresses or carrier issues.",
+        "galleryImages": [
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png",
+          "/images/products/white-coffee.png"
+        ],
+       
+          "moreDetails": [
+            {
+              "image": "/images/products/details/halfbrown-cup-2.png",
+              "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-3.png",
+              "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+            },
+            {
+              "image": "/images/products/details/halfbrown-cup-4.png",
+              "text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced."
+            }
+          ]
+      }
+    ]
+  }

@@ -1,0 +1,3185 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F1F0EC;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Navbar styles */
+/* === Navbar Styles (Updated) === */
+
+.navbar.default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #F1F0EC;
+  color: #383837;
+  position: fixed; /* Both navbars are fixed for smooth transitions */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding-right: 40px;
+}
+.navbar-logo img { padding-left: 50px; width: 40px; }
+.navbar-right { display: flex; align-items: center; gap: 40px; padding-right: 100px; }
+.navbar-links { display: flex; gap: 40px; }
+.navbar-links a { text-decoration: none; color: #383837; font-weight: 400; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: border-color 0.3s; }
+.navbar-links a.active, .navbar-links a:hover { border-bottom-color: #383837; }
+.loyalty-program-button { padding: 12px 24px; background-color: #383837; color: #fff; border: none; cursor: pointer; font-weight: 400; font-size: 18px; font-family: 'Montserrat';border: #383837 solid 1px ; }
+.loyalty-program-button:hover {
+  background-color: #F1F0EC;
+  border: #383837 solid 1px ;
+  color: #383837;
+}
+/* --- Padding-top for page content --- */
+body {
+  padding-top: 90px;
+}
+
+/* --- NEW Styles for the Sticky Navbar --- */
+.navbar.sticky {
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 999; /* Slightly lower z-index than default to appear "under" it during swap */
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   display: grid;
+  /* --- KEY CHANGE: Three-column grid for perfect symmetry --- */
+  /* 1fr takes up 1 fraction of the available space. */
+  /* `auto` takes up only the space its content needs (the logo). */
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  
+  /* Use a consistent padding for the entire navbar */
+  padding: 1rem 4rem;
+}
+
+.sticky-nav-logo {
+  grid-column: 2; /* Explicitly place the logo in the second (center) column */
+  display: flex; /* Helps ensure image is centered if it has extra space */
+  justify-content: center;
+  align-items: center;
+}
+.sticky-nav-logo img {
+  height: 50px; /* --- MODIFIED: Larger logo --- */
+  width: auto;
+  padding-right: 125px;
+}
+
+.sticky-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem; /* Space between links */
+}
+
+/* --- MODIFIED: Pushes links to the absolute edges --- */
+.sticky-nav-links.left {
+  grid-column: 1; /* Place in the first column */
+  justify-content: flex-start;
+}
+.sticky-nav-links.right {
+  grid-column: 3; /* Place in the third column */
+  justify-content: flex-end;
+  padding-right: 100px; /* Aligns items to the very right edge of the column */
+}
+
+
+/* --- Link Text and Underline Styling (refined for elegance) --- */
+.navbar.sticky .sticky-nav-links a {
+  color: #c7c7c7; /* Softer white for inactive links */
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 8px; /* More space for the underline */
+  transition: color 0.3s ease;
+}
+.navbar.sticky .sticky-nav-links a:hover {
+  color: #ffffff;
+}
+.navbar.sticky .sticky-nav-links a.active {
+  color: #ffffff; /* Bright white for the active link */
+  font-weight: 600;
+}
+
+/* The underline effect */
+.navbar.sticky .sticky-nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Start the underline from the center */
+  transform: translateX(-50%); /* Pull it back by half its width to be truly centered */
+  width: 70%; /* Make the underline slightly shorter than the text for a refined look */
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.hamburger-icon {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* --- Mobile Menu Overlay --- */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F1F0EC;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.mobile-menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-grow: 1; /* Takes up the remaining space */
+}
+.mobile-menu-links a {
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}
+.mobile-menu-links a.active {
+  font-weight: 600;
+}
+
+
+/* --- THE BREAKPOINT --- */
+/* When the screen is 992px wide or less... */
+@media (max-width: 992px) {
+  /* Hide the desktop navigation */
+  .navbar-right-desktop,
+  .sticky-nav-links {
+    display: none;
+  }}
+  
+  /* Show the hamburger icon */
+  .hamburger-icon {
+    display: flex;
+  }
+
+  /* Adjust padding for the default navbar on mobile */
+ 
+
+/* Hero section styles */
+.hero-container {
+  position: relative;
+  height: 91vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: #fff;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.hero-text p {
+  font-size: 24px;
+  margin: 10px 0 0;
+  font-weight: 100;
+}
+/* Add these new styles to your existing App.css file */
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 120px;
+  background-color: #fff; /* Light beige background */
+  color: #383837;
+  text-align: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+
+.service-icon {
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #383837;
+}
+/* Add these new styles to your existing App.css file */
+
+.store-section-container {
+  padding: 80px 40px;
+  background-color: #f8f5f2;
+  color: #383837;
+}
+
+.store-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.store-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #383837;
+  margin: 8px auto 0;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.store-item {
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-item-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.store-item-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff;
+  color: #383837;
+  text-decoration: none;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Grid layout adjustments */
+.item-tall {
+  grid-row: span 2;
+}
+
+.item-normal {
+  grid-row: span 1;
+}
+
+/* Specific styling for the checkout card */
+.checkout-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0ede9;
+  border: 1px solid #ddd;
+  grid-row: span 1;
+  grid-column: span 2; /* Add this line */
+}
+.checkout-text {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 20px;
+  text-align: center;
+  color: #383837;
+}
+
+.checkout-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #383837;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Add this @import at the top of your App.css file if you don't have it already */
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:wght@400;500;700&display=swap');
+
+/* === Reusable Quote Component Styles === */
+
+.quote-container {
+  padding: 80px 20px; /* Vertical padding, minimal horizontal for small screens */
+  background-color: #ffffff; /* Use #f8f5f2 to match other sections if needed */
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* This new wrapper constrains the content's width for readability */
+.quote-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 800px; /* Controls the width of the text block */
+  margin: 0 auto; /* Horizontally centers the content */
+}
+
+.quote-icon {
+  font-family: 'Times New Roman', serif;
+  font-size: 80px;
+  color: #cccccc;
+  line-height: 0.5;
+  margin-bottom: 20px;
+}
+
+.quote-content {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Updated to use Rissa Typeface */
+.quote-script-text {
+  /* It will use Rissa Typeface if found, otherwise it falls back to the others */
+  font-family: 'Rissa Typeface', 'Cedarville Cursive', cursive;
+  font-size: 28px; /* Adjusted size for better readability */
+  color: #5a5a58;
+  margin: 0 0 25px 0;
+  line-height: 1.6;
+}
+
+.quote-normal-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #383837;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.quote-author {
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #5a5a58;
+  font-style: italic;
+}
+
+/* === Menu Section Styles === */
+
+.menu-section-container {
+  padding: 80px 40px;
+  background-color: #f8f5f2;
+  color: #383837;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.menu-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #383837;
+  margin: 8px auto 0;
+}
+
+.menu-grid {
+  display: grid;
+  /* Creates two columns of equal width */
+  grid-template-columns: repeat(2, 1fr);
+  /* Automatically adjust row height */
+  grid-auto-rows: minmax(min-content, max-content);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-image {
+  width: 100%;
+  height: 100%; /* Allows image to fill the grid item space */
+  object-fit: cover;
+}
+
+.menu-item-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff;
+  color: #383837;
+  text-decoration: none;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+/* Grid layout adjustments */
+.menu-item.item-tall {
+  grid-row: span 1.5; /* Makes this item span two rows */
+}
+
+.menu-item.item-normal {
+  grid-row: span 1; /* Makes this item span one row */
+}
+
+/* Specific styling for the menu's checkout card */
+.checkout-card-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0ede9;
+  border: 1px solid #ddd;
+  grid-row: span 1; /* It will naturally fit in the next available single slot */
+}
+
+/* === Call to Action (CTA) Section Styles === */
+
+.cta-container {
+  position: relative;
+  height: 85vh; /* Adjust height as needed */
+  width: 100%;
+  color: #fff;
+  
+  /* Background image setup */
+  background-size: cover;
+  background-position: center;
+  
+  /* Flexbox for vertical alignment (optional but good practice) */
+  display: flex;
+  align-items: flex-end; /* Aligns children to the bottom */
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+/* Dark gradient overlay for better text contrast */
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  z-index: 1;
+}
+
+/* Container for the text on the bottom-left */
+.cta-text {
+  position: relative;
+  z-index: 2; /* Ensures text is above the overlay */
+  max-width: 450px;
+}
+
+.cta-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.cta-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* Container for the logo on the bottom-right */
+.cta-logo {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  z-index: 2;
+ 
+}
+.cta-logo img  {
+  width: 60px;
+}
+/* === Footer Section Styles === */
+
+.footer-container {
+  background-color: #383837; /* Grey background from image */
+  color: #fff;
+  padding: 60px 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Top: Logo and Socials */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 20px;
+}
+
+.footer-logo-main img {
+  max-width: 250px; /* Adjust size as needed */
+  height: auto;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: #fff;
+}
+
+/* Middle: 4 Columns */
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+}
+
+.footer-column span {
+  opacity: 0.8;
+}
+
+
+/* Bottom: Centered Logo */
+.footer-bottom {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bottom img {
+  width: 70px;
+}
+
+/* === Store Page General === */
+.store-page-content {
+  background-color: #f8f5f2;
+}
+
+/* === Store Hero Section === */
+/* === Store Hero Section (Updated for Full-Width Layout) === */
+
+.store-hero-container {
+  position: relative; /* Essential for positioning children */
+  width: 100%;
+  height: 65vh; /* Adjust viewport height as needed */
+  background-color: #f0ede9; /* Fallback color */
+  overflow: hidden; /* Ensures nothing spills out */
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Covers the area without distortion */
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient from left to right to ensure text is readable */
+  background: linear-gradient(to right, #f0ede9 20%, rgba(240, 237, 233, 0) 60%);
+  z-index: 2;
+}
+
+.store-hero-text {
+  position: absolute;
+  bottom: 20px; /* Distance from the bottom edge */
+  left: 80px;   /* Distance from the left edge */
+  z-index: 3;   /* Ensures it's on top of the overlay */
+  color: #383837;
+  max-width: 500px; /* Prevents text from becoming too wide on large screens */
+  text-align: left;
+}
+.store-hero-text h2 {
+  font-size: 52px;
+  font-weight: 500; /* Bolder text */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.store-hero-text p {
+  font-size: 16px;
+  color: #5a5a58;
+  margin-top: 15px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 40px; /* Position from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Fine-tune centering */
+  display: flex;
+  gap: 12px; /* Space between dots */
+  z-index: 3;
+}
+
+.slider-dots .dot {
+  width: 9px; /* Smaller dot size */
+  height: 9px; /* Smaller dot size */
+  border-radius: 50%;
+  background-color: #d1d1d1; /* Inactive dot color */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dots .dot.active {
+  background-color: #383837; /* Active dot color */
+}
+
+/* ==========================================================================
+   Store Page Styles (Final Design)
+   ========================================================================== */
+   .store-page-content {
+    padding: 0 0rem 0rem 0rem;
+    background-color: #F1F0EC;
+  }
+  
+  /* --- Product Carousel Section --- */
+  .product-carousel-section {
+    padding: 0 4rem 4rem 4rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  .carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem; /* Space for the underline */
+  }
+  .carousel-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #383837;
+  }
+  .carousel-title h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #000 ;
+  }
+  .filter-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .title-underline {
+    
+    text-align: left;
+    border: none;
+    height: 1px;
+    background-color: #333;
+    width: 150px;
+  }
+  .carousel-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .pagination-display {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .nav-buttons-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .nav-arrow:hover:not(:disabled) {
+    background-color: #000;
+  }
+  .nav-arrow:disabled {
+    background-color: #d1d1d1;
+    cursor: not-allowed;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+  }
+  .product-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow: hidden; /* Hide scrollbar completely; navigation is handled by buttons */
+    scroll-behavior: smooth;
+  }
+  
+  /* --- Product Card Styling --- */
+  .product-card {
+    flex: 0 0 calc(25% - 1.15rem); /* 4 items per view, accounting for gap */
+    min-width: 250px;
+    border: 1px solid #e0dbd5;
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 25px -10px rgba(0,0,0,0.1);
+  }
+  .product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .product-image-container {
+    position: relative;
+    background-color: #f7f5f2;
+  }
+  .product-main-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    
+  }
+  .product-price-tag {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: rgba(40, 40, 40, 0.9);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .product-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background-color: #444;
+    color: #fff;
+    margin-top: auto;
+  }
+  .product-name {
+    font-weight: 500;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 1200px) {
+      .product-card { flex-basis: calc(33.33% - 1rem); }
+  }
+  @media (max-width: 992px) {
+      .store-page-content { padding: 0 2rem 2rem 2rem; }
+      .product-card { flex-basis: calc(50% - 0.75rem); }
+  }
+  @media (max-width: 576px) {
+      .product-card { flex-basis: 90%; }
+      .carousel-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .carousel-navigation { align-self: flex-end; }
+  }
+
+/* === Product Detail Page & Header Styles === */
+.page-content {
+  background-color: #F1F0EC;
+}
+
+.product-header-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 80px 40px;
+}
+
+/* Left Column */
+.product-info-left h1 {
+  font-size: 52px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #383837;
+  margin-bottom: 30px;
+  text-align: left;
+
+}
+
+.details-section {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 25px 0;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.details-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.details-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5a5a58;
+}
+
+.shipping-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.shipping-note svg {
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  position: absolute;
+  bottom: 60px;
+  gap: 10px;
+}
+
+.price-display {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 12px 24px;
+  border: 1px solid #383837;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+}
+
+.cart-btn {
+  padding: 12px;
+  border: 1px solid #383837;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.buy-now-btn {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 154px;
+  background-color: #383837;
+  color: #fff;
+  border: 1px solid #383837;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  cursor: pointer;
+}
+.buy-now-btn:hover {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 154px;
+  background-color: #F1F0EC;
+  color: #383837;
+  border: 1px solid #383837;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  cursor: pointer;
+}
+
+/* Right Column */
+.product-gallery-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NEW: Wrapper for the main image and color swatches */
+.image-swatch-wrapper {
+  display: flex;
+  gap: 20px; /* Adds space between the image and the swatches */
+  margin-bottom: 20px; /* Space between this block and the thumbnails */
+}
+
+.main-image-container {
+  background-color: #f0ede9;
+  padding: 20px;
+  /* The margin-bottom is now on the wrapper */
+  flex-grow: 1; /* Allows the image container to take available space */
+}
+.main-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* UPDATED: Color swatches are now part of the normal document flow */
+.color-swatches {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-shrink: 0; /* Prevents swatches from shrinking */
+}
+
+.swatch {
+  
+  width: 32px; /* Slightly larger for easier clicking */
+  height: 32px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1); /* Inner shadow for definition */
+}
+.swatch.active {
+  border: 2px solid #383837;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* The justify-content rule is no longer needed as it will align left by default */
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border-color: #383837;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === Product More Details Section Styles === */
+
+.more-details-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Space between each row */
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 60px;
+}
+
+/* This class reverses the order of the columns */
+.detail-row.reverse {
+  grid-template-areas: "text image"; /* Defines layout areas */
+}
+
+.detail-row.reverse .detail-image {
+  grid-area: image;
+}
+
+.detail-row.reverse .detail-text {
+  grid-area: text;
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detail-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #5a5a58;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Start off-screen */
+  width: 380px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 15px rgba(0,0,0,0.15);
+  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Smoother transition */
+  z-index: 1050; /* Higher z-index */
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-panel.open {
+  right: 0; /* Slide in */
+}
+
+/* Overlay for when the cart is open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040; /* Just below the panel */
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Style the contents of the cart panel */
+.cart-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cart-header h3 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.cart-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.cart-items {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item:last-child {
+  margin-bottom: 0;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 1px solid #eee;
+}
+
+.cart-item .item-info {
+  flex-grow: 1;
+}
+
+.cart-item .item-info p {
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.cart-item .item-price {
+  font-weight: 600;
+}
+
+.cart-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.subtotal {
+  
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.checkout-btn {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #555;
+}
+
+.cart-item .item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.item-name {
+  margin-bottom: 0.5rem;
+}
+
+.item-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.quantity-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.quantity-controls button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantity-controls span {
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #333;
+}
+
+.empty-cart-message {
+  text-align: center;
+  padding-top: 2rem;
+  color: #777;
+}
+
+
+/* ==========================================================================
+   Checkout Screen Styles (New)
+   ========================================================================== */
+   .checkout-page-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+  }
+  
+  /* Left Side: Order Summary */
+  .order-summary-side {
+    width: 50%;
+    background-color: #F1F0EC; /* Light beige background */
+    padding: 2.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+  
+  .back-button svg {
+    margin-right: 0.5rem;
+  }
+  
+  .summary-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .summary-main-total {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #e0dbd5;
+  }
+  
+  .summary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .item-image-container {
+    position: relative;
+    margin-right: 1.5rem;
+  }
+  .item-image-container img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 0px;
+    border: 1px solid #e0dbd5;
+  }
+  .item-image-container .item-quantity {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #8c8c8c;
+    color: white;
+    border-radius: 0px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .summary-item-info { flex-grow: 1; }
+  .summary-item-info p { margin: 0; font-size: 0.95rem; }
+  .summary-item-price { font-weight: 500; }
+  
+  .summary-breakdown { margin-top: auto; /* Pushes to the bottom */ }
+  .breakdown-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: #555; }
+  .breakdown-row.total { font-weight: bold; color: #333; font-size: 1.1rem; }
+  .breakdown-divider { height: 1px; background-color: #e0dbd5; margin: 1.5rem 0; }
+  
+  /* Right Side: Shipping Info */
+  .shipping-side {
+    width: 35%;
+    background-color: #ffffff;
+    padding: 3rem 6rem;
+  }
+  
+  .form-section { margin-bottom: 2.5rem; text-align: left; }
+  .form-section-title { font-size: 1.3rem; font-weight: 500; margin-bottom: 1.5rem; }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    color: #666;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 1rem;
+  }
+  .form-group input::placeholder { color: #aaa; }
+  .mt-1 { margin-top: 0.75rem; }
+  .input-row { display: flex; gap: 0.75rem; }
+  
+  /* Custom Radio Buttons */
+  .radio-group .radio-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius:0px;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+  }
+  .radio-group .radio-option:has(input:checked) {
+    border-color: #333;
+    background-color: #f9f9f9;
+  }
+  .radio-group input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    top: -1px; /* Align better with text */
+  }
+  .radio-group input[type="radio"]:checked {
+    border-color: #333;
+  }
+  .radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .radio-group .radio-option label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+  }
+  .radio-label-price { font-weight: 600; }
+  
+  /* Final Pay button and text */
+  .shipping-side .pay-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #212121;
+    color: #fff;
+    border: none;
+    border-radius:0px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  .terms-text {
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  .terms-text a { color: #555; text-decoration: underline; }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    .order-summary-side { padding: 2rem; width: 50%; }
+    .shipping-side { padding: 2rem 3rem; width: 50%;}
+  }
+  
+  @media (max-width: 992px) {
+    .checkout-page-container { flex-direction: column; }
+    .order-summary-side, .shipping-side { width: 100%; }
+    .order-summary-side { min-height: auto; order: 2; } /* Show summary below on mobile */
+    .shipping-side { order: 1; }
+    .summary-main-total { font-size: 2.5rem; }
+  }
+
+  /* ==========================================================================
+   Thank You Screen Styles
+   ========================================================================== */
+.thank-you-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+.thank-you-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.order-confirmation-text {
+  color: #555;
+  margin-bottom: 2rem;
+}
+.order-summary-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+.summary-item-ty {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.summary-total-ty {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.home-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+/* ==========================================================================
+   Menu Screen Styles (V2 - Precision Layout)
+   ========================================================================== */
+
+/* Define the fade-in animation */
+:root {
+  --menu-anim-duration: 600ms;
+  --menu-anim-curve: cubic-bezier(0.88, 0.01, 0.25, 0.99);
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-container-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.menu-screen-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 93vw;
+  background-color: #383837;
+  overflow: hidden; /* Prevents scrollbars from layout shifts */
+  text-align: left;
+  color: #fff;
+}
+
+/* --- Columns --- */
+.menu-left-column, .menu-right-column {
+  flex: 1; /* Each column takes up 50% of the width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 150px 10px 10px ;
+  
+}
+
+
+.menu-left-column {
+  justify-content: flex-end;
+  /* Align content to the right edge of the column */
+}
+
+.menu-right-column {
+  justify-content: center; /* Align content to the left edge of the column */
+  position: relative; /* Needed for positioning the main image */
+}
+
+/* --- Text Content (Left Column) --- */
+.menu-text-content {
+  max-width: 650px;
+  /* UPDATED: Apply new animation properties */
+  animation: fadeIn var(--menu-anim-duration) var(--menu-anim-curve) forwards;
+  color: #fff;
+}
+.menu-text-content h1,
+.menu-text-content h2,
+.menu-text-content h3,
+.menu-text-content p {
+  color: var(--theme-color, #F1F0EC);
+  /* UPDATED: Apply new animation properties */
+  transition: color var(--menu-anim-duration) var(--menu-anim-curve);
+}
+
+.menu-text-content h1 {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  
+  
+}
+
+
+.title-underline,
+.content-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--theme-color, #383837);
+  opacity: 0.5;
+  /* UPDATED: Apply new animation properties */
+  transition: background-color var(--menu-anim-duration) var(--menu-anim-curve);
+}
+.menu-text-content h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  border-top: 2px solid #e0dbd5;
+}
+
+
+.menu-text-content h3 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  
+  margin: 0.5rem 0 2rem 0;
+}
+
+.menu-text-content p {
+  padding-top: 20px;
+  line-height: 1.7;
+  border-top: 2px solid #e0dbd5;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.options-container {
+  display: flex;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0dbd5;
+  
+}
+
+.options-list {
+  padding-right: 2rem;
+  color: #F1F0EC;
+}
+.options-list:first-of-type {
+  padding-right: 3rem;
+  margin-right: 3rem;
+  border-right: 2px solid #e0dbd5;
+}
+
+.options-list h4 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  
+}
+
+.options-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options-list li {
+  margin-bottom: 0.6rem;
+  color: #F1F0EC;
+}
+.options-list li::before {
+  content: '·';
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+
+/* --- Image & Nav (Right Column) --- */
+.main-drink-image {
+  max-width: 105%; /* Controls the size of the bottle/cup image */
+  height: auto;
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+.menu-icon-nav {
+  position: absolute;
+  top: 50%;
+  right: 4rem; /* Spacing from the right edge */
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-icon {
+  width: 80px; /* Increased size to match design */
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s;
+}
+
+.nav-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-icon.active {
+  transform: scale(1.15);
+  border-color: #fff;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .menu-screen-container {
+    flex-direction: column;
+    height: auto; /* Allow content to flow on mobile */
+    overflow-y: auto;
+    padding-bottom: 120px; /* Space for the bottom nav */
+    
+  }
+
+  .menu-left-column, .menu-right-column {
+    flex: none; /* Reset flex sizing */
+    width: 100%;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .menu-right-column {
+    order: 1; /* Image first */
+  }
+  .menu-left-column {
+    order: 2; /* Text second */
+    text-align: center; /* Center text on mobile */
+  }
+  .title-underline, .options-list:first-of-type {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .options-container { justify-content: center; }
+
+  .main-drink-image {
+    max-width: 40%;
+    margin-top: 2rem;
+  }
+
+  /* Fixed bottom bar for mobile */
+  .menu-icon-nav {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f7f5f2e6;
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    border-top: 1px solid #e0dbd5;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  }
+}
+
+.menu-listing-container {
+  padding: 4rem 6rem;
+  background-color: #F1F0EC;
+  min-height: 80vh;
+}
+
+.menu-listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.listing-header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #383837;
+}
+.listing-header-title h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.filter-container {
+  position: relative; /* This is the anchor for the absolute-positioned dropdown */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.filter-dropdown-list {
+  position: absolute;
+  top: calc(100% + 10px); /* Position below the title with a 10px gap */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px -10px rgba(0,0,0,0.15);
+  z-index: 100;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  min-width: 220px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.filter-dropdown-list li {
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+.filter-dropdown-list li:hover {
+  background-color: #f7f5f2;
+}
+.filter-dropdown-list li.active {
+  background-color: #333;
+  color: #fff;
+}
+
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  background-color: #fff;
+}
+.search-bar-container input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+}
+.search-icon {
+  transform: rotate(45deg);
+  color: #888;
+  cursor: pointer;
+}
+
+/* --- Carousel Styling --- */
+.carousel-wrapper {
+    position: relative;
+}
+.highlighted-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0.5rem; /* Add padding to prevent cards from being cut off by the wrapper edge */
+  margin: 0 -0.5rem; /* Counteract the padding on the items */
+  /* Hide the scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.highlighted-carousel::-webkit-scrollbar {
+  display: none;
+}
+.no-results-message {
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+    color: #777;
+}
+
+.carousel-nav-arrow {
+    /* This style is removed as the nav buttons are no longer part of the design */
+    display: none; 
+}
+
+
+/* --- Menu Grid Card Styling --- */
+.menu-grid-card {
+  
+  background-color: #fff;
+  flex: 0 0 calc(25% - 1.2rem); /* 4 items in view */
+  min-width: 280px;
+  transition: box-shadow 0.3s ease;
+}
+.menu-grid-card:hover {
+    box-shadow: 0 8px 25px -15px rgba(0,0,0,0.1);
+}
+.grid-card-image {
+  background-color: #F1F0EC;
+}
+.grid-card-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  
+  margin-right: 50px;
+}
+.grid-card-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #444;
+  color: #fff;
+  font-weight: 400;
+}
+.temp-icons {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .menu-grid-card { flex-basis: calc(33.33% - 1rem); }
+}
+@media (max-width: 992px) {
+  .menu-listing-container { padding: 3rem; }
+  .menu-listing-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .search-bar-container { width: 100%; }
+  .menu-grid-card { flex-basis: calc(50% - 0.75rem); }
+}
+@media (max-width: 576px) {
+  .menu-listing-container { padding: 2rem 1.5rem; }
+  .menu-grid-card { flex-basis: 85%; }
+}
+
+.static-category-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0dbd5;
+}
+
+.static-grid-header {
+  margin-bottom: 2rem;
+  text-align: left;
+  
+}
+
+.static-grid-header h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: #383837;
+}
+
+.static-grid-header hr {
+  border: none;
+  height: 2px;
+  background: #333;
+  width: 80px;
+  margin-top: 0.5rem;
+}
+
+.static-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-grid-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the link takes up the full space of the grid cell */
+  height: 100%;
+}
+
+.card-hover-wrapper {
+  position: relative; /* This is the anchor for the absolute-positioned overlay */
+  overflow: hidden; /* Hides parts of the overlay that might stick out */
+  height: 100%;
+  display: flex; /* Ensures the child .menu-grid-card fills the height */
+  flex-direction: column;
+}
+
+.card-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  
+  z-index: 2; /* Make sure it's on top of the card's content */
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Prevents the overlay from blocking the link */
+  transition: opacity 0.3s ease-in-out;
+}
+.card-hover-overlay span {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1.5rem;
+}
+
+/* --- Make the overlay appear on hover --- */
+.menu-grid-card-link:hover .card-hover-overlay {
+  opacity: 1;
+}
+
+/* --- Optional: a subtle zoom effect on the image on hover --- */
+.menu-grid-card-link:hover .grid-card-image img {
+  transform: scale(1.05);
+}
+
+.menu-grid-card .grid-card-image img {
+  transition: transform 0.3s ease-in-out; /* Smooth transition back to normal */
+}
+
+
+/* --- Your existing .menu-grid-card styles --- */
+.menu-grid-card { 
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- IMPORTANT: Apply flex sizing to the LINK, not the card itself --- */
+.highlighted-carousel .menu-grid-card-link {
+  flex: 0 0 calc(25% - 1.15rem);
+  min-width: 280px;
+}
+
+.drink-detail-container {
+    text-align: left;
+    
+  display: flex;
+  height: 90vh; /* A bit shorter than the menu hero to not take the full screen */
+  min-height: 800px;
+  width: 100%;
+  background-color: #F1F0EC;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+/* --- Columns --- */
+.detail-left-column {
+  flex: 1; display: flex; justify-content: flex-start; align-items: center; padding-left: 6rem;
+}
+.detail-right-column {
+  flex: 1; display: flex; justify-content: center; align-items: center;
+}
+
+/* --- Text Content (Left Column) --- */
+.detail-text-content {
+  max-width: 550px;
+}
+.detail-text-content h1, .detail-text-content h2, .detail-text-content h3, .detail-text-content p {
+  color: var(--theme-color, #383837)
+  ;
+  
+}
+/* We can re-use the generic classes for internal elements like title-underline */
+.detail-text-content h1 { font-size: 5rem; font-weight: 400; line-height: 1.5; margin: 0; }
+.detail-text-content h2 { font-size: 2.2rem; font-weight: 400; margin: 0; border-top: 2px solid #e0dbd5; padding-top: 20px;}
+.detail-text-content h3 { font-size: 1.5rem; line-height: 1.5; font-weight: 400; margin: 0.5rem 0 0 0;padding-bottom: 20px; }
+.detail-text-content p { line-height: 1.7; font-size: 1rem; margin: 0 0 2.5rem 0;border-top: 2px solid #e0dbd5; padding-top: 20px; }
+
+/* The options-container and options-list classes are generic and can be reused */
+/* No need to duplicate them if their style is identical */
+
+
+/* --- Image (Right Column) --- */
+.detail-main-image {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.6s ease-out; /* We can reuse the fadeIn animation */
+}
+
+/* Responsive styles for the detail screen */
+@media (max-width: 992px) {
+  .drink-detail-container {
+    flex-direction: column;
+    text-align: left;
+    height: auto;
+  }
+  .detail-left-column {
+    padding-right: 0;
+    text-align: left;
+    order: 2; /* Text below image */
+  }
+  .detail-right-column {
+    order: 1; /* Image on top */
+  }
+  .detail-main-image {
+    max-width: 40%;
+    margin-bottom: 2rem;
+  }
+}
+
+.drink-detail-page {
+  background-color: #F1F0EC;
+}
+
+.drink-detail-container {
+  display: flex;
+  height: 90vh;
+  min-height: 700px;
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem;
+}
+
+
+
+
+.drink-details-body {
+  padding: 4rem 8rem; /* Add horizontal padding to center the content */
+  max-width: 1200px; /* Constrain the width for a better reading experience */
+  margin: 0 auto; /* Center the container */
+}
+
+
+
+/* Style for alternating layout: Image on the right for every even-numbered item */
+.detail-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.detail-item-image {
+  flex: 0 0 45%; /* Image takes up 45% of the container width */
+}
+
+.detail-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+}
+
+.detail-item-text {
+  flex: 1;
+  padding-top: 50px;
+  text-align: left; /* Text takes up the remaining space */
+}
+
+.detail-item-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+
+/* --- Responsive styles for the new section --- */
+@media (max-width: 992px) {
+  .drink-details-body {
+    padding: 3rem;
+  }
+  .detail-item,
+  .detail-item:nth-child(even) {
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 2rem;
+  }
+}
+
+.details-body-header {
+  text-align: center; /* Center the title */
+  margin-bottom: 5rem; /* Add significant space below the title */
+}
+
+.details-body-header h2 {
+  font-size: 3.5rem; /* Make the font size large */
+  font-weight: 500;
+  line-height: 1.3;
+  /* The color is set dynamically via inline style in the component */
+  max-width: 600px; /* Constrain width for readability on large screens */
+  margin: 0 auto; /* Center the title block itself */
+}
+
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* ==========================================================================
+   BLOG SCREEN STYLES
+   ========================================================================== */
+
+.blog-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  background-color: #F1F0EC;
+}
+
+.blog-category-section {
+  margin-bottom: 5rem;
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.category-title h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.category-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.blog-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card {
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.blog-card-text h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+}
+
+.blog-card-text p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   BLOG DETAIL SCREEN STYLES
+   ========================================================================== */
+
+.blog-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+.blog-detail-container.not-found { text-align: center; }
+
+.blog-detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.blog-detail-header h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+.blog-detail-tagline {
+  font-size: 1.5rem;
+  color: #555;
+  margin: 0;
+}
+
+.blog-detail-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 4rem;
+}
+
+.blog-detail-content{
+  text-align: left;
+}
+
+.blog-detail-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+.blog-detail-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 3rem 0 1.5rem 0;
+}
+
+
+/* --- Responsive Blog Styles --- */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Drink Detail Body Styles --- */
+.drink-details-body {
+  padding: 4rem 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.details-body-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.details-body-header h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* Alternating layout for even-numbered items */
+.detail-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.detail-item-image {
+  flex: 0 0 45%;
+}
+
+.detail-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.detail-item-text {
+  flex: 1;
+}
+
+.detail-item-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .drink-details-body {
+    padding: 3rem;
+  }
+  .detail-item,
+  .detail-item:nth-child(even) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   OUR BRAND SCREEN STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   OUR BRAND SCREEN STYLES (V2 - Full-Width Hero)
+   ========================================================================== */
+
+.our-brand-page {
+  background-color: #F1F0EC;
+}
+
+/* --- Hero Section (New Styling) --- */
+.brand-hero {
+  width: 100%;
+  height: 70vh; /* Adjust height as desired */
+  position: relative; /* Crucial for positioning the tabs inside */
+  overflow: hidden; /* Ensures rounded corners on tabs look clean */
+}
+.hero-img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* --- Tabs Navigation (New Styling) --- */
+.brand-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end; /* --- NEW: Align items to the bottom --- */
+  background-color: transparent;
+}
+.tab-button {
+  padding: 1.25rem 2.5rem; /* Default padding */
+  
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  border-top-right-radius: 20px;
+  /* --- NEW: Set a default height --- */
+  height: 65px; 
+}
+.tab-button2{
+  padding: 1rem 2.5rem; /* Default padding */
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  border-top-right-radius: 20px;
+  /* --- NEW: Set a default height --- */
+  height: 55px; 
+}
+.tab-button3 {
+  padding: 1rem 2.5rem; /* Default padding */
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  border-top-right-radius: 20px;
+  /* --- NEW: Set a default height --- */
+  height: 45px; 
+}
+.tab-button:not(:last-child) {
+    margin-right: 0px;
+    background-color: #fff;
+}
+.tab-button.active {
+  background-color: #F1F0EC;
+  color: #333;
+  /* --- NEW: Active tab has a taller padding and height --- */
+  padding-top: 1.75rem;
+  height: 75px;
+}
+
+.tab-button3:not(:last-child) {
+    
+    margin-right: 10px;
+    background-color: #fff;
+}
+.tab-button3.active {
+  background-color: #F1F0EC;
+  color: #333;
+  /* --- NEW: Active tab has a taller padding and height --- */
+  padding-top: 1.75rem;
+  height: 65px;
+}
+.tab-button2:not(:last-child) {
+    margin-right: 0px;
+    background-color: #fff;
+}
+.tab-button2.active {
+  background-color: #F1F0EC;
+  color: #333;
+  /* --- NEW: Active tab has a taller padding and height --- */
+  padding-top: 1.75rem;
+  height: 75px;
+}
+/* --- Tab Content --- */
+.brand-content-container {
+  padding: 5rem 15%;
+  background-color: #F1F0EC; /* Match the active tab's background */
+}
+.tab-content h2 { font-size: 2.5rem;font-weight: 400; text-align: center; margin-bottom: 3rem; }
+.content-video { width: 100%; display: block; margin-bottom: 3rem; }
+.philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.philosophy-item img { width: 100%; margin-bottom: 1.5rem; }
+.philosophy-item h3 { font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; }
+.philosophy-item p { color: #666; line-height: 1.7; }
+
+/* --- Banner & Closing Text Sections (No changes needed here) --- */
+.vision-banner, .cafe-banner {
+  position: relative;
+  text-align: center;
+}
+.vision-banner img, .cafe-banner img {
+  width: 100%;
+  display: block;
+}
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 80%;
+}
+.banner-text h2 { font-size: 3rem; font-weight: 500; margin-bottom: 1rem; }
+.banner-text p { font-size: 1.2rem; line-height: 1.6; max-width: 600px; margin: 0 auto; }
+.banner-text.overlay p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+/* --- Closing Text Section --- */
+.closing-text {
+  padding: 6rem 15%;
+  text-align: center;
+}
+.closing-text p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+  .brand-hero { height: 50vh; }
+  .tab-button { padding: 1rem 1.5rem; font-size: 0.9rem; border-top-right-radius: 15px; }
+  .brand-content-container, .closing-text { padding: 4rem 5%; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .brand-tabs {
+        width: 100%; /* Make tabs take full width on small screens */
+    }
+    .tab-button {
+        flex: 1; /* Make tabs distribute evenly */
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+
+.ai-suggestion-modal .ant-modal-content {
+  background-color: #F1F0EC; /* Match your site's background */
+  border-radius: 0px;
+  padding: 0;
+  font-family: 'Montserrat';
+}
+.ai-suggestion-modal .ant-modal-close-x {
+  color: #888;
+}
+.ai-suggestion-modal .ant-modal-body {
+  padding: 2.5rem 3rem;
+  font-family: 'Montserrat';
+}
+
+/* --- Main Content Container --- */
+.ai-modal-content {
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+/* --- Input Section --- */
+.ai-modal-icon {
+  font-size: 2rem;
+  color: #A16B48; /* A warm, coffee-like accent color */
+  margin-bottom: 1rem;
+}
+
+.ai-modal-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+.ai-modal-subtitle {
+  color: #666;
+  margin: 0.5rem 0 2rem 0;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+}
+
+.predefined-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat';
+}
+
+.mood-pill {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  padding: 0.5rem 1rem;
+font-family: 'Montserrat';
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.mood-pill:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.ai-modal-or-text {
+  color: #aaa;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  font-family: 'Montserrat';
+}
+
+.ai-modal-content .ant-input,
+.ai-modal-content .ant-input:focus {
+  background-color: #fff !important;
+  border-color: #d9d9d9 !important;
+  box-shadow: none !important;
+  font-family: 'Montserrat';
+}
+
+.ai-submit-button {
+  width: 100%;
+  height: 45px;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 0px;
+  background-color: #383837;
+  font-family: 'Montserrat';
+}
+.ai-submit-button:hover {
+  background-color: #383837;
+}
+
+/* --- Loading Spinner --- */
+.ai-modal-spinner {
+  display: block;
+  margin: 3rem auto;
+}
+
+/* --- Suggestion Result Section --- */
+.ai-suggestion-result {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  font-family: 'Montserrat';
+}
+.ai-suggestion-result h3 {
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.suggested-drink-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #e0dbd5;
+  text-align: left;
+}
+.suggested-drink-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background-color: #f7f5f2;
+}
+.suggested-drink-info h4 { font-size: 1.3rem; margin: 0 0 0.5rem 0; font-weight: 600; color: #333; }
+.suggested-drink-info p { margin: 0; font-style: italic; color: #555; line-height: 1.6; }
+
+.ai-back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #777;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.ai-back-button:hover {
+    color: #333;
+}
+
+.search-and-nav { /* This might be named something else, find the search bar's parent */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+/* --- OR, add this new wrapper style --- */
+.search-and-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between the AI button and the search bar */
+}
+
+
+/* --- NEW: Styling for the AI Suggestion button --- */
+.ai-suggestion-button {
+  /* Use your brand's primary button style */
+  background-color: #333 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  font-weight: 400 !important;
+  height: 40px; /* Match the height of the search bar */
+  padding: 0 1.5rem !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+  font-family: 'Montserrat';
+
+}
+
+.ai-suggestion-button:hover {
+  background-color: #555 !important;
+  border-color: #555 !important;
+}
+
+.opener-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allows clicks to pass through after animation */
+}
+
+/* --- The black panels --- */
+.opener-panel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #1a1a1a; /* A very dark gray or black */
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1); /* Smooth splitting animation */
+}
+.opener-panel.left {
+  left: 0;
+}
+.opener-panel.right {
+  right: 0;
+}
+
+/* --- The Logo --- */
+.opener-logo {
+  z-index: 10000;
+  opacity: 0; /* Hidden by default */
+  transform: scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.opener-logo img {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+}
+
+
+/* --- Animation Phases --- */
+
+/* 1. "visible" phase: The logo fades in */
+.opener-container.visible .opener-logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 2. "splitting" phase: The logo fades out and the panels slide away */
+.opener-container.splitting .opener-logo {
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.opener-container.splitting .opener-panel.left {
+  transform: translateX(-100%);
+}
+.opener-container.splitting .opener-panel.right {
+  transform: translateX(100%);
+}
+
+/* ==========================================================================
+   FRANCHISE SCREEN STYLES (V2 - Minimalist)
+   ========================================================================== */
+
+.franchise-page-container {
+  background-color: #F1F0EC; /* Your brand's light background color */
+}
+
+/* --- New Hero Section --- */
+.franchise-hero {
+  width: 100%;
+  height: 50vh; /* Adjust height as needed */
+  background-color: #333; /* Fallback color */
+}
+.franchise-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Content Wrapper --- */
+.franchise-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.franchise-header {
+  text-align: left; /* --- MODIFIED --- */
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 3rem;
+}
+
+.franchise-header h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #383837; /* Dark brand color */
+}
+
+.franchise-header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  /* Removed max-width and margin: auto */
+}
+
+/* --- Form Styling (Minimalist) --- */
+.franchise-form-container .form-group {
+  margin-bottom: 2rem;
+}
+
+.franchise-form-container label {
+  display: block;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.75rem;
+  text-align: left; /* --- MODIFIED --- */
+}
+
+.franchise-form-container label span {
+  color: #B94A5D;
+  margin-left: 4px;
+}
+
+.franchise-form-container input[type="text"],
+.franchise-form-container input[type="tel"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0; /* --- MODIFIED --- */
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.franchise-form-container input[type="text"]:focus,
+.franchise-form-container input[type="tel"]:focus {
+  outline: none;
+  border-color: #383837; /* Dark brand color on focus */
+  box-shadow: none; /* --- MODIFIED --- */
+}
+
+.franchise-form-container .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left; /* --- MODIFIED --- */
+}
+
+.franchise-form-container .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.submit-request-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #383837; /* Dark brand color */
+  color: #fff;
+  border: none;
+  border-radius: 0; /* --- MODIFIED --- */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 2rem;
+}
+
+.submit-request-btn:hover {
+  background-color: #000;
+}
+
+.submit-request-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   CAREERS SCREEN STYLES (V2 - Minimalist & Branded)
+   ========================================================================== */
+
+.careers-page-container {
+  background-color: #F1F0EC;
+}
+
+/* --- New Hero Section --- */
+.careers-hero {
+  width: 100%;
+  height: 50vh;
+  background-color: #333;
+}
+.careers-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Content Wrapper for padding --- */
+.careers-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.careers-header {
+  text-align: left;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.careers-header h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #383837; /* Dark brand color */
+  margin-bottom: 1.5rem;
+}
+
+.careers-header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 750px; /* Constrain line length for readability */
+}
+
+/* --- Form Styling --- */
+.careers-form .form-section {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.careers-form .form-section:last-of-type {
+    border-bottom: none;
+}
+
+.careers-form .section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+.careers-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem 3rem;
+}
+
+.careers-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.careers-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.careers-form label, .careers-form .form-group p {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.careers-form input[type="text"],
+.careers-form input[type="tel"],
+.careers-form input[type="email"],
+.careers-form input[type="date"],
+.careers-form select,
+.careers-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0; /* --- Sharp corners --- */
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+
+.careers-form input:focus,
+.careers-form select:focus,
+.careers-form textarea:focus {
+  outline: none;
+  border-color: #383837; /* Dark brand color on focus */
+}
+
+.careers-form .checkbox-group, .careers-form .radio-group-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+.careers-form .checkbox-group label, .careers-form .radio-group-inline label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+}
+
+.skills-grid .form-group {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.careers-form .submit-request-btn {
+  margin-top: 3rem;
+  padding: 1rem 2.5rem;
+  background-color: #383837; /* Dark brand color */
+  color: #fff;
+  border: none;
+  border-radius: 0; /* --- Sharp corners --- */
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.careers-form .submit-request-btn:hover {
+    background-color: #000;
+}
+.careers-form .submit-request-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

@@ -1,0 +1,359 @@
+{
+  "menuDrinks": [
+    {
+      "id": "md01",
+      "name": "Cold Brew",
+      "category": "Highlighted drinks",
+      "themeColor": "#383837",
+      "tags": ["highlighted", "cold", "coffee", "energy"],
+      "tagline": "Bold & Smooth.",
+      "subheading": "Proudly prepared with care for your daily fuel.",
+      "description": "Our signature Cold Brew is steeped slowly for over 12 hours to extract rich flavor and deep character without the bitterness. Made from 100% arabica beans and bottled for freshness, it's the perfect blend of intensity and clarity.",
+      "options": ["Classic Black", "With Milk (Oat, Almond, or Whole)", "Sweetened or Unsweetened"],
+      "supplements": ["Vanilla syrup", "Caramel drizzle", "Extra shot of cold brew"],
+      "mainImage": "/images/menu/cold-brew-main.png",
+      "menuIcon": "/images/menu/cold-brew-icon.png"
+    },
+    {
+      "id": "md02",
+      "name": "Matcha Latte",
+      "category": "Matcha and Tea",
+      "themeColor": "#687550",
+      "tags": ["highlighted", "hot", "cold", "no-coffee", "energy"],
+      "tagline": "Green Energy, Refined.",
+      "subheading": "Organic ceremonial-grade matcha blended with creamy milk for a natural, jitter-free boost.",
+      "description": "A vibrant fusion of organic Japanese matcha and silky milk — our Matcha Latte delivers a clean boost of energy and focus without the crash. Hand-whisked for a smooth texture and earthy taste.",
+      "options": ["Hot or Iced", "Oat, Soy, Almond, or Whole Milk", "Lightly Sweetened or Unsweetened"],
+      "supplements": ["Collagen boost", "Coconut cream foam", "Honey swirl"],
+      "mainImage": "/images/menu/matcha-main.png",
+      "menuIcon": "/images/menu/matcha-icon.png",
+      "moreDetails": [
+        {
+          "image": "/images/details/matcha-1.png",
+          "text": "We are committed to using only the highest quality, ceremonial-grade matcha, meticulously sourced from the renowned tea-growing region of Uji, Japan. This prestigious origin is famous for its centuries-old tradition of cultivating some of the finest green tea leaves in the world. Our matcha powder boasts a vivid, vibrant emerald-green color that signals its freshness and superior quality. Each batch is carefully stone-ground to preserve the delicate flavors and nutrients. The result is a smooth, velvety texture paired with a rich umami flavor profile—characterized by a subtle sweetness and savory depth—that delights the palate and elevates your matcha experience to an authentic, ceremonial level."
+        },
+        {
+          "image": "/images/details/matcha-2.png",
+          "text": "Every serving is expertly whisked by hand with a traditional bamboo ‘chasen,’ producing a creamy, frothy consistency that’s flawlessly smooth and free of any lumps. This time-honored technique ensures the matcha’s delicate flavors are fully released and beautifully blended."
+        },
+        {
+          "image": "/images/details/matcha-3.png",
+          "text": "Finally, the vibrant, richly colored matcha is gently blended with your choice of perfectly steamed milk—whether creamy dairy or smooth plant-based—resulting in a beautifully layered latte that’s both visually stunning and irresistibly delicious."
+        }
+      ]
+    },
+     {
+    "id": "md03",
+    "name": "Espresso",
+    "category": "Espresso Drinks",
+    "themeColor": "#A16B48",
+    "tags": ["highlighted", "hot", "coffee", "energy"],
+    "tagline": "Pure & Intense.",
+    "subheading": "The quintessential coffee experience, expertly pulled to perfection.",
+    "description": "The foundation of all our coffee drinks. A rich, aromatic shot with a thick, syrupy body and a beautiful layer of crema. Perfect on its own or as the base for your favorite latte or cappuccino.",
+    "options": ["Single Shot", "Double Shot (Doppio)", "With a side of sparkling water"],
+    "supplements": ["Dash of cinnamon", "Drop of cream"],
+    "mainImage": "/images/menu/esspresso-main.png",
+    "menuIcon": "/images/menu/esspresso-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/espresso-1.png",
+        "text": "Carefully crafted from freshly ground coffee beans, each shot is expertly extracted at a precise temperature and optimal pressure to unlock the full spectrum of rich flavors. This meticulous process ensures the creation of a smooth, velvety crema—the golden, aromatic layer on top—that perfectly crowns every cup with its creamy texture and enticing aroma."
+      },
+      {
+        "image": "/images/details/espresso-2.png",
+        "text": "Experience the full-bodied intensity in every sip, where a luscious, syrupy texture envelops your palate and a lingering, captivating aroma gently awakens your senses long after the last drop."
+      }
+    ]
+  },
+  {
+    "id": "md04",
+    "name": "Cream Latte",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["highlighted", "hot", "cold", "coffee"],
+    "tagline": "Smooth & Comforting.",
+    "subheading": "Our signature espresso balanced with perfectly steamed, velvety milk.",
+    "description": "The classic latte, perfected. A shot of rich espresso is enveloped in steamed milk with a thin layer of foam, creating a smooth, comforting, and well-balanced beverage. A timeless choice for any time of day.",
+    "options": ["Hot or Iced", "Skim, Whole, Oat, or Almond Milk", "Add a flavor shot"],
+    "supplements": ["Whipped cream", "Extra foam", "Caramel drizzle"],
+    "mainImage": "/images/menu/creamlatte-main.png",
+    "menuIcon": "/images/menu/creamlatte-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/cream-latte-1.png",
+        "text": "Espresso is perfectly balanced with creamy steamed milk to create a velvety texture."
+      },
+      {
+        "image": "/images/details/cream-latte-2.png",
+        "text": "Customizable with a range of milk options and flavor shots."
+      }
+    ]
+  },
+  {
+    "id": "md05",
+    "name": "Americano",
+    "category": "Black Coffee",
+    "themeColor": "#4a4a49",
+    "tags": ["hot", "cold", "coffee", "energy"],
+    "tagline": "Simple & Robust.",
+    "subheading": "Rich espresso shots topped with hot water to create a light layer of crema.",
+    "description": "For those who appreciate the nuanced flavor of espresso but prefer a longer-lasting drink. An Americano offers a wonderfully rich and aromatic cup that's both bold and smooth.",
+    "options": ["Hot or Iced", "Single, Double, or Triple Shot", "With room for cream"],
+    "supplements": ["Splash of milk", "Honey"],
+    "mainImage": "/images/menu/blackeye-main.png",
+    "menuIcon": "/images/menu/americano-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/americano-1.png",
+        "text": "Espresso diluted with hot water to maintain flavor while offering a lighter body."
+      },
+      {
+        "image": "/images/details/americano-2.png",
+        "text": "Versatile and customizable for your preferred strength and creaminess."
+      }
+    ]
+  },
+  {
+    "id": "md06",
+    "name": "Affogato",
+    "category": "Espresso Drinks",
+    "themeColor": "#A16B48",
+    "tags": ["cold", "coffee"],
+    "tagline": "Rich & Indulgent.",
+    "subheading": "A decadent blend of coffee and sweet cream.",
+    "description": "Our Affogato is a luxurious treat, combining a hot shot of bold espresso poured over a scoop of creamy vanilla ice cream. A perfect blend of bitter and sweet, cold and warm.",
+    "options": ["Single or Double Shot", "Extra Drizzle of Caramel or Chocolate"],
+    "supplements": ["Chocolate Shavings", "Caramel Sauce"],
+    "mainImage": "/images/menu/affogato-main.png",
+    "menuIcon": "/images/menu/affogato-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/affogato-1.png",
+        "text": "Classic Italian dessert-drink that balances hot espresso with cool creaminess."
+      },
+      {
+        "image": "/images/details/affogato-2.png",
+        "text": "Perfect indulgence for coffee and dessert lovers alike."
+      }
+    ]
+  },
+  {
+    "id": "md07",
+    "name": "Zestpresso",
+    "category": "Espresso Drinks",
+    "themeColor": "#A16B48",
+    "tags": ["hot", "coffee"],
+    "tagline": "Bright & Bold.",
+    "subheading": "Espresso with a citrus twist to awaken your senses.",
+    "description": "Zestpresso combines the intensity of espresso with a subtle infusion of citrus zest, creating a lively and invigorating coffee experience.",
+    "options": ["Single or Double Shot", "With or Without Citrus Zest"],
+    "supplements": ["Honey drizzle", "Cinnamon sprinkle"],
+    "mainImage": "/images/menu/zestpresso-main.png",
+    "menuIcon": "/images/menu/zestpresso-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/zestpresso-1.png",
+        "text": "To elevate the rich, bold flavors of our carefully brewed espresso, we add a touch of freshly grated citrus zest—typically from lemon, orange, or bergamot. This bright, aromatic addition introduces vibrant, tangy notes that perfectly complement the deep, roasted undertones of the coffee. The zest’s natural oils release a burst of freshness and subtle acidity, enhancing the espresso’s complexity and giving each sip a lively, invigorating character. This harmonious balance between the intense coffee and the crisp citrus creates a refreshing sensory experience, awakening the palate with every taste."
+      },
+      {
+        "image": "/images/details/zestpresso-2.png",
+        "text": "A refreshing twist for those seeking something unique and flavorful."
+      }
+    ]
+  },
+  {
+    "id": "md08",
+    "name": "Mocchiato",
+    "category": "Espresso Drinks",
+    "themeColor": "#A16B48",
+    "tags": ["hot", "coffee"],
+    "tagline": "Sweet & Creamy.",
+    "subheading": "Espresso with a touch of milk and sweet syrup.",
+    "description": "Our Mocchiato offers a bold espresso shot topped with a small amount of steamed milk and a drizzle of caramel or vanilla syrup for a sweet finish.",
+    "options": ["Single or Double Shot", "Caramel or Vanilla Syrup"],
+    "supplements": ["Whipped Cream", "Chocolate Shavings"],
+    "mainImage": "/images/menu/mocchiato-main.png",
+    "menuIcon": "/images/menu/mocchiato-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/mocchiato-1.png",
+        "text": "Classic espresso drink enhanced with a subtle creamy sweetness."
+      },
+      {
+        "image": "/images/details/mocchiato-2.png",
+        "text": "Perfect for those who want a lightly sweetened coffee experience."
+      }
+    ]
+  },
+  {
+    "id": "md09",
+    "name": "Black Eye",
+    "category": "Black Coffee",
+    "themeColor": "#4a4a49",
+    "tags": ["hot", "cold", "coffee", "energy"],
+    "tagline": "Double the Kick.",
+    "subheading": "Bold brewed coffee with two shots of espresso for serious caffeine lovers.",
+    "description": "Our Black Eye packs a punch with a strong brewed coffee base combined with double espresso shots. Ideal for those needing an extra boost.",
+    "options": ["Hot or Iced", "Extra Shots Available"],
+    "supplements": ["Splash of Milk", "Honey"],
+    "mainImage": "/images/menu/blackeye-main.png",
+    "menuIcon": "/images/menu/blackeye-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/blackeye-1.png",
+        "text": "Robust brewed coffee paired with intense espresso shots."
+      },
+      {
+        "image": "/images/details/blackeye-2.png",
+        "text": "Powerful and energizing with a bold flavor profile."
+      }
+    ]
+  },
+  {
+    "id": "md10",
+    "name": "Red Eye",
+    "category": "Black Coffee",
+    "themeColor": "#4a4a49",
+    "tags": ["hot", "cold", "coffee", "energy"],
+    "tagline": "Espresso Meets Brew.",
+    "subheading": "Drip coffee with a shot of espresso for a balanced boldness.",
+    "description": "The Red Eye blends smooth drip coffee with a single espresso shot, giving you the richness of coffee with a caffeine kick.",
+    "options": ["Hot or Iced", "Extra Espresso Shot"],
+    "supplements": ["Splash of Milk", "Sugar"],
+    "mainImage": "/images/menu/blackeye-main.png",
+    "menuIcon": "/images/menu/blackeye-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/redeye-1.png",
+        "text": "A favorite for those who want coffee flavor and espresso strength in one cup."
+      },
+      {
+        "image": "/images/details/redeye-2.png",
+        "text": "Balanced for smoothness with a punch of energy."
+      }
+    ]
+  },
+  {
+    "id": "md11",
+    "name": "Flat White",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["hot", "coffee", "creamy"],
+    "tagline": "Smooth & Velvety.",
+    "subheading": "Espresso with steamed milk and a thin layer of microfoam.",
+    "description": "Our Flat White features rich espresso enveloped in creamy steamed milk, topped with a delicate layer of microfoam, delivering a smooth and balanced flavor.",
+    "options": ["Hot or Iced", "Whole, Oat, Soy, or Almond Milk", "Add flavor shot"],
+    "supplements": ["Extra Foam", "Caramel Drizzle", "Whipped Cream"],
+    "mainImage": "/images/menu/flatwhite-main.png",
+    "menuIcon": "/images/menu/flatwhite-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/flatwhite-1.png",
+        "text": "Expertly steamed milk for that signature velvety texture."
+      },
+      {
+        "image": "/images/details/flatwhite-2.png",
+        "text": "Perfect balance of espresso intensity and creamy softness."
+      }
+    ]
+  },
+  {
+    "id": "md12",
+    "name": "Iced Flat White",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["cold", "coffee", "creamy"],
+    "tagline": "Refreshing & Smooth.",
+    "subheading": "Chilled espresso and steamed milk with a velvety finish.",
+    "description": "A cool twist on the classic Flat White, served over ice for a refreshing yet creamy coffee experience.",
+    "options": ["Skim, Whole, Oat, or Almond Milk", "Add flavor shot"],
+    "supplements": ["Extra Foam", "Caramel Drizzle", "Whipped Cream"],
+    "mainImage": "/images/menu/icedflatwhite-main.png",
+    "menuIcon": "/images/menu/icedflatwhite-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/icedflatwhite-1.png",
+        "text": "Cold espresso combined with chilled milk for a creamy refreshment."
+      },
+      {
+        "image": "/images/details/icedflatwhite-2.png",
+        "text": "Smooth, rich flavor perfect for warm days."
+      }
+    ]
+  },
+  {
+    "id": "md13",
+    "name": "Iced Latte",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["cold", "coffee", "creamy"],
+    "tagline": "Classic & Cool.",
+    "subheading": "Espresso, milk, and ice come together for a refreshing treat.",
+    "description": "The Iced Latte is a chilled espresso drink combined with your choice of milk and served over ice. Smooth, refreshing, and perfectly balanced.",
+    "options": ["Skim, Whole, Oat, or Almond Milk", "Add flavor shot"],
+    "supplements": ["Whipped Cream", "Caramel Drizzle", "Extra Foam"],
+    "mainImage": "/images/menu/icedlatte-main.png",
+    "menuIcon": "/images/menu/icedlatte-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/icedlatte-1.png",
+        "text": "Refreshing and smooth, crafted with chilled espresso and creamy milk."
+      },
+      {
+        "image": "/images/details/icedlatte-2.png",
+        "text": "Customize with a variety of milk and flavor options."
+      }
+    ]
+  },
+  {
+    "id": "md14",
+    "name": "Cappuccino",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["hot", "cold", "coffee", "creamy"],
+    "tagline": "Classic & Comforting.",
+    "subheading": "Espresso combined with steamed milk and a thick foam cap.",
+    "description": "Our Cappuccino blends bold espresso with steamed milk and a generous layer of foam, delivering a rich and creamy coffee experience that’s timeless.",
+    "options": ["Hot or Iced", "Choice of milk", "Add flavor shot"],
+    "supplements": ["Cinnamon dust", "Caramel drizzle", "Whipped cream"],
+    "mainImage": "/images/menu/cappuccino-main.png",
+    "menuIcon": "/images/menu/cappuccino-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/cappuccino-1.png",
+        "text": "Expertly steamed milk creates the perfect foam consistency."
+      },
+      {
+        "image": "/images/details/cappuccino-2.png",
+        "text": "A classic drink for coffee lovers seeking balance and texture."
+      }
+    ]
+  },
+  {
+    "id": "md15",
+    "name": "Cortado",
+    "category": "Cream Coffee",
+    "themeColor": "#A16B48",
+    "tags": ["hot", "cold", "coffee", "balanced"],
+    "tagline": "Equal Parts Espresso & Milk.",
+    "subheading": "A smooth, balanced espresso drink with just enough milk to soften.",
+    "description": "The Cortado pairs a double shot of espresso with steamed milk in equal parts, creating a harmonious balance of strong coffee flavor and creamy texture.",
+    "options": ["Hot or Iced", "Choice of milk", "Add flavor shot"],
+    "supplements": ["Caramel drizzle", "Cinnamon sprinkle", "Extra foam"],
+    "mainImage": "/images/menu/cortado-main.png",
+    "menuIcon": "/images/menu/cortado-icon.png",
+    "moreDetails": [
+      {
+        "image": "/images/details/cortado-1.png",
+        "text": "A simple, elegant drink highlighting espresso’s natural flavor."
+      },
+      {
+        "image": "/images/details/cortado-2.png",
+        "text": "Perfect for those who want a coffee-forward drink with creamy balance."
+      }
+    ]
+  }
+    
+  ]
+}

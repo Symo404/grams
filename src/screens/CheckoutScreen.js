@@ -52,37 +52,57 @@ const handleSubmit = async (e) => {
   };
   
   const orderDetails = {
-    // These keys (`customerInfo`, `orderItems`, `totals`) MUST match the backend.
-    customerInfo: formData,
-    orderItems: cartItems,
-    totals: totals,
-  };
+      customerInfo: formData,
+      orderItems: cartItems,
+      totals: {
+        subtotal: subtotal.toFixed(2),  // Send as string
+        shipping: shippingCost,       // Send as number
+        total: total.toFixed(2)         // Send as string
+      }
+    };
 
   const productsToUpdate = cartItems.filter(item => typeof item.id === 'number');
 
   // --- 2. EXECUTE THE TRANSACTIONAL FLOW ---
-  try {
-    // STEP A: Save the order to your database
-    const orderResponse = await axios.post('/api/orders', orderDetails);
-    console.log('Order saved to DB with ID:', orderResponse.data.orderId);
+   try {
+      // Step 1: Save the order to your backend
+      const orderResponse = await axios.post('/api/orders', orderDetails);
+      const newOrderId = orderResponse.data.orderId;
+      console.log('Order saved to DB with ID:', newOrderId);
 
     // STEP B: Send the confirmation email
-    const orderItemsHTML = cartItems.map(item => `<p>${item.name} (x${item.quantity}) - ${parseFloat(item.price).toFixed(2)} Dh</p>`).join('');
+    const orderItemsHTML = cartItems.map(item => 
+        `<p style="margin: 5px 0;">${item.name} (x${item.quantity}) - <strong>${(parseFloat(item.price) * item.quantity).toFixed(2)} Dh</strong></p>`
+      ).join('');
     const templateParams = {
-      order_id: orderResponse.data.orderId,
-      customer_name: formData.fullName,
-      // ... other email params
-      total_price: `${totals.total} Dh`,
-    };
-    await emailjs.send(/* ... */);
-    console.log('EMAIL SUCCESS!');
+        // --- Customer & Order Info ---
+        order_id: newOrderId,
+        customer_name: formData.fullName,
+        customer_phone: formData.phone,
+        customer_address: formData.address,
+        customer_city: formData.city,
+        customer_state: formData.state,
+        customer_zip: formData.zip,
+        
+        // --- Order Details ---
+        order_items: orderItemsHTML, // The formatted HTML string of items
+        shipping_method: shippingOptions[selectedShipping].label,
+        
+        // --- Totals ---
+        subtotal: `${orderDetails.totals.subtotal} Dh`,
+        shipping_cost: shippingCost === 0 ? 'Free' : `${orderDetails.totals.shipping} Dh`,
+        total_price: `${orderDetails.totals.total} Dh`,
+      };
+     await emailjs.send('service_sb61i9y', 'template_c58qczb', templateParams, '_MAPT6u2x17ZgW8Tf');
+      console.log('EMAIL SUCCESS!');
 
     // STEP C: Update the product stock
-    if (productsToUpdate.length > 0) {
-      const stockUpdatePayload = { cartItems: productsToUpdate.map(item => ({ id: item.id, quantity: item.quantity })) };
-      await axios.post('/api/products/update-stock', stockUpdatePayload);
-      console.log('Stock updated successfully.');
-    }
+    const productsToUpdate = cartItems.filter(item => typeof item.id === 'number');
+      if (productsToUpdate.length > 0) {
+        const stockUpdatePayload = { cartItems: productsToUpdate.map(item => ({ id: item.id, quantity: item.quantity })) };
+        await axios.post('/api/products/update-stock', stockUpdatePayload);
+        console.log('Stock updated successfully.');
+      }
 
     // STEP D: Finalize UI
     clearCart();

@@ -10,6 +10,7 @@ const StoreScreen = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {

@@ -202,7 +202,9 @@ useEffect(() => {
           </div>
           <div className="search-and-nav">
             {/* --- NEW: AI Suggestion Button --- */}
+            <div>
             <Button className='ai-suggestion-button' onClick={() => setIsAiModalVisible(true)}>AI Drink Suggestion</Button>
+            </div>
           <div className="search-bar-container">
             <input type="text" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             <span className="search-icon">&#9906;</span>

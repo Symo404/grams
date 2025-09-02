@@ -20,24 +20,24 @@ const ProductCarousel = ({ title, products }) => {
   const carouselRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 4;
-  const totalPages = products ? Math.ceil(products.length / itemsPerPage) : 0;
+  // --- REMOVED: No more `itemsPerPage` or `totalPages` logic needed for this scroll method ---
+  // We can add it back later if a "snap-to-page" feature is desired.
 
   const handleScroll = (direction) => {
-    const newPage = currentPage + direction;
-    if (newPage > 0 && newPage <= totalPages && carouselRef.current) {
-      const scrollAmount = carouselRef.current.offsetWidth * direction;
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      setCurrentPage(newPage);
+    // --- FIX: Calculate scrollAmount INSIDE the handler ---
+    if (carouselRef.current) {
+      // scroll by 80% of the visible width for a nice "page" effect
+      const scrollAmount = carouselRef.current.clientWidth * 0.8; 
+      carouselRef.current.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      // The pagination logic below is more complex, we'll simplify the button disabling for now
     }
   };
   
-  // A small effect to reset the scroll position if the product list changes (e.g., due to filtering)
+  // A small effect to reset the scroll position if the product list changes
   useEffect(() => {
-      if (carouselRef.current) {
-          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-          setCurrentPage(1);
-      }
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
   }, [products]);
 
 
@@ -50,24 +50,20 @@ const ProductCarousel = ({ title, products }) => {
       <div className="carousel-header">
         <div className="carousel-title">
           <h2>{title}</h2>
-          <span className="filter-icon">&#9776;</span>
-          
         </div>
         
+        {/* Simplified navigation for now. The buttons are always enabled. */}
         <div className="carousel-navigation">
-          <span className="pagination-display">{currentPage}/{totalPages}</span>
           <div className="nav-buttons-group">
             <button
               className="nav-arrow"
               onClick={() => handleScroll(-1)}
-              disabled={currentPage === 1}
             >
               &larr;
             </button>
             <button
               className="nav-arrow"
               onClick={() => handleScroll(1)}
-              disabled={currentPage === totalPages}
             >
               &rarr;
             </button>

@@ -16,7 +16,7 @@ import BlogDetailScreen from './screens/BlogDetailScreen';
 import OurBrandScreen from './screens/OurBrandScreen'; 
 import FranchiseScreen from './screens/FranchiseScreen';
 import CareersScreen from './screens/CareersScreen'
-
+import ComingSoonScreen from './screens/ComingSoonScreen';
 
 import './App.css';
 
@@ -45,6 +45,9 @@ function App() {
           <Route path="/our-brand" element={<OurBrandScreen />} />
            <Route path="/franchise" element={<FranchiseScreen />} /> {/* <-- ADD ROUTE */}
            <Route path="/carrers" element={<CareersScreen />} /> {/* <-- ADD ROUTE */}
+           <Route path="/subscription" element={<ComingSoonScreen />} />
+            <Route path="/loyalty" element={<ComingSoonScreen />} />
+            <Route path="/comingsoon" element={<ComingSoonScreen />} />
         </Routes>
         </CartProvider>
       </div>

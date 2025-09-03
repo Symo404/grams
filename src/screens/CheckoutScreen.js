@@ -10,7 +10,6 @@ import { message } from 'antd';
 const CheckoutScreen = () => {
     const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
-  const [paymentMethod, setPaymentMethod] = useState('cash');
   
   const [formData, setFormData] = useState({
     phone: '',
@@ -55,9 +54,9 @@ const handleSubmit = async (e) => {
       customerInfo: formData,
       orderItems: cartItems,
       totals: {
-        subtotal: subtotal.toFixed(2),  // Send as string
-        shipping: shippingCost,       // Send as number
-        total: total.toFixed(2)         // Send as string
+        subtotal: subtotal.toFixed(2),  
+        shipping: shippingCost,      
+        total: total.toFixed(2)         
       }
     };
 

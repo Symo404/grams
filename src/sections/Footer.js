@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import brandLogo from '../assets/logo/logo-white.png';
 import gramsLogo from '../assets/logo/grams-signature.png';
 
+import instagramOutline from '../assets/icons/instagram-outline.png';
+import instagramSolid from '../assets/icons/instagram-solid.png';
+import facebookOutline from '../assets/icons/facebook-outline.png';
+import facebookSolid from '../assets/icons/facebook-solid.png';
+import tiktokOutline from '../assets/icons/tiktok-outline.png';
+import tiktokSolid from '../assets/icons/tiktok-solid.png';
+
 const Footer = () => {
   return (
     <footer className="footer-container">
@@ -13,10 +20,19 @@ const Footer = () => {
           <div className="footer-logo-main">
             <img src={gramsLogo} alt="Grams Specialty Coffee" />
           </div>
-          <div className="footer-socials">
-            <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-            <a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-            <a href="#" aria-label="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h-2a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h2"></path><path d="M12 12v-2a4 4 0 0 1 4-4h0"></path><path d="M8 20v-8a4 4 0 0 0-4-4H4"></path></svg></a>
+           <div className="footer-socials">
+            <a href="https://www.instagram.com/gramsmorocco/" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Instagram">
+              <img src={instagramOutline} alt="Instagram" className="icon-outline" />
+              <img src={instagramSolid} alt="Instagram" className="icon-solid" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Facebook">
+              <img src={facebookOutline} alt="Facebook" className="icon-outline" />
+              <img src={facebookSolid} alt="Facebook" className="icon-solid" />
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="TikTok">
+              <img src={tiktokOutline} alt="TikTok" className="icon-outline" />
+              <img src={tiktokSolid} alt="TikTok" className="icon-solid" />
+            </a>
           </div>
         </div>
 
@@ -43,15 +59,15 @@ const Footer = () => {
             <h4>Learn</h4>
             <ul>
                <li><Link to="/blog">Grams blogs</Link></li>
-              <li><a href="#">Baristas</a></li>
-              <li><a href="#">Our guides</a></li>
+              <li><Link to="/comingsoon">Baristas</Link></li>
+              <li><Link to="/comingsoon">Our Guides</Link></li>
             </ul>
           </div>
           <div className="footer-column">
             <h4>We're Hiring</h4>
             <ul>
               <li><Link to="/franchise">As a franchise</Link></li>
-              <li><a href="#">As a supplier</a></li>
+              <li><Link to="/comingsoon">As a supplier</Link></li>
               <li><Link to="/carrers">As an employee</Link></li>
             </ul>
           </div>

@@ -4,6 +4,8 @@ import axios from 'axios';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
 import AiSuggestModal from '../components/AiSuggestModal';
+import MenuHeroSlider from '../sections/MenuHeroSlider';
+import CategoryGrid from '../sections/CategoryGrid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSnowflake, faFire } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'antd';
@@ -129,60 +131,9 @@ useEffect(() => {
     <>
       <Navbar />
       
-      {/* Only render the hero section if there is an active drink to display */}
-      {activeDrink && (
-        <div className='menu-container-container '>
-       <div className="menu-screen-container">
-        {/* New wrapper for the left side */}
-        <div className="menu-left-column">
-          <div key={activeDrink.id} className="menu-text-content">
-            <h1>{activeDrink.name}</h1>
-           
-            
-            <h2>{activeDrink.tagline}</h2>
-            <h3>{activeDrink.subheading}</h3>
-           
-            <p>{activeDrink.description}</p>
-            
-            <div className="options-container">
-              <div className="options-list">
-                <h4>Options:</h4>
-                <ul>
-                  {activeDrink.options.map((option, index) => (
-                    <li key={index}>{option}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="options-list">
-                <h4>Supplements:</h4>
-                <ul>
-                  {activeDrink.supplements.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* New wrapper for the right side */}
-        <div className="menu-right-column">
-            {/* --- FIX: Use snake_case for main_image --- */}
-            <img key={activeDrink.id + '-image'} src={activeDrink.main_image} alt={activeDrink.name} className="main-drink-image"/>
-            <div className="menu-icon-nav">
-              {highlightedDrinks.map(drink => (
-                <div key={drink.id} className={`nav-icon ${drink.id === activeDrinkId ? 'active' : ''}`} onClick={() => handleIconClick(drink.id)}>
-                  {/* --- FIX: Use snake_case for menu_icon --- */}
-                  <img src={drink.menu_icon} alt={`${drink.name} icon`} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-      </div>
-      </div>
-      )}
-      
+    
+        <MenuHeroSlider />
+        <div className="highlighted-drinks-section">
       <div className="menu-listing-container">
         <header className="menu-listing-header">
           <div className="listing-header-title">
@@ -225,7 +176,9 @@ useEffect(() => {
           </div>
           <button onClick={() => scrollCarousel(1)} className="carousel-nav-arrow next">&rarr;</button>
         </div>
-
+      </div>
+       <CategoryGrid />
+       <div className="menu-listing-container">
           {categories.map(category => (
           <section key={category} className="static-category-section">
             <div className="static-grid-header"><h2>{category}</h2></div>
@@ -238,6 +191,7 @@ useEffect(() => {
             </div>
           </section>
         ))}
+        </div>
       </div>
       <AiSuggestModal
         visible={isAiModalVisible}
